@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Service Registry com Spring Cloud Netflix Eureka.iml" filepath="$PROJECT_DIR$/.idea/Service Registry com Spring Cloud Netflix Eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product-api/product-api.iml" filepath="$PROJECT_DIR$/product-api/product-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/review-api/review-api.iml" filepath="$PROJECT_DIR$/review-api/review-api.iml" />
+    </modules>
+  </component>
+</project>
