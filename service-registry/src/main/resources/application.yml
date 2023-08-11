@@ -1,0 +1,7 @@
+eureka:
+  client:
+    registerWithEureka: false # Deve se registrar ou não
+    fetchRegistry: false # Deve buscar os registros ou não
+
+server:
+  port: 8761 # Porta do Tomcat
