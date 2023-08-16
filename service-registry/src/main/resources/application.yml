@@ -6,3 +6,17 @@ eureka:
     renewalPercentThreshold: 0.55 #Padrao 0.85 Evitar emergency
 server:
   port: 8761 # Porta do Tomcat
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'health,info'
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+
+info:
+  app:
+    name: Servidor de descoberta

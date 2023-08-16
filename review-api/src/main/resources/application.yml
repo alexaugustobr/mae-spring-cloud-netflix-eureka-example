@@ -17,6 +17,21 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
   instance:
     instanceId: ${random.value}
-    #hostname: review-api.awlocal
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'info' #health
+
+info:
+  app:
+    name: API de avaliações de produtos
+
+logging:
+  level:
+    com.netflix.discovery.DiscoveryClient: DEBUG
