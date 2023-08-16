@@ -1,12 +1,14 @@
+spring:
+  application:
+    name: service-registry-eureka
 eureka:
   client:
-    registerWithEureka: false # Deve se registrar ou não
-    fetchRegistry: false # Deve buscar os registros ou não
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery1:8761/eureka/,http://discovery2:8762/eureka/,http://discovery3:8763/eureka/
   server:
-    renewalPercentThreshold: 0.55 #Padrao 0.85 Evitar emergency
-server:
-  port: 8761 # Porta do Tomcat
-
+    renewalPercentThreshold: 0.55
 management:
   endpoints:
     web:
@@ -20,3 +22,40 @@ management:
 info:
   app:
     name: Servidor de descoberta
+
+# Fim da configuração global
+---
+spring:
+  config:
+    activate:
+      on-profile: discovery1
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: discovery1 # importante para funcionamento do replica, caso contrário nao localiza
+    instanceId: ${spring.application.name}:discovery1
+
+---
+spring:
+  config:
+    activate:
+      on-profile: discovery2
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: discovery2
+    instanceId: ${spring.application.name}:discovery2
+
+---
+spring:
+  config:
+    activate:
+      on-profile: discovery3
+server:
+  port: 8763
+eureka:
+  instance:
+    hostname: discovery3
+    instanceId: ${spring.application.name}:discovery3
