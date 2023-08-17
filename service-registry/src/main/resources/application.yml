@@ -5,7 +5,6 @@ spring:
     user:
       name: eureka
       password: password123
-    ignored: /actuator/**
 eureka:
   client:
     registerWithEureka: true
